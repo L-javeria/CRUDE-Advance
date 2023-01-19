@@ -15,7 +15,9 @@ app.post('/login', (req,res) => {
     let password = req.body.password
     console.log(username + ':' + password)
     
-    console.log(Buffer.from(username).toString('base64'))
+    base64 = Buffer.from(username).toString('base64')
+    console.log(base64)
+    res.send("Now, your Base64 Authenticator is " + base64)
 })
 
 app.listen(3000, console.log('Port is Running'))
